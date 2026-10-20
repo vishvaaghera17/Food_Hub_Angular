@@ -1,0 +1,39 @@
+<div class="page-container">
+    <div class="page-header">
+      <h1>🍱 {{restaurantName ? restaurantName + ' — Menu' : 'All Food Items'}}</h1>
+      <div class="filters">
+        <input type="text" [(ngModel)]="searchQuery" (input)="filter()" placeholder="Search food...">
+        <select [(ngModel)]="selectedCategory" (change)="filter()">
+          <option value="">All Categories</option>
+          <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="food-grid" *ngIf="filtered.length > 0; else empty">
+      <div class="food-card" *ngFor="let food of filtered">
+        <div class="food-img">
+          <img [src]="getImageUrl(food.image)" [alt]="food.name"
+               onerror="this.src='https://via.placeholder.com/300x200?text=Food'">
+          <span class="veg-tag" [class.nonveg]="!food.isVeg">{{food.isVeg ? '🟢 Veg' : '🔴 Non-Veg'}}</span>
+          <span class="category-tag">{{food.category}}</span>
+        </div>
+        <div class="food-info">
+          <h4>{{food.name}}</h4>
+          <p class="desc">{{food.description | slice:0:70}}...</p>
+          <p class="restaurant-name">🏪 {{food.restaurant?.name}}</p>
+          <p class="prep-time">⏱️ {{food.preparationTime}}</p>
+          <div class="food-footer">
+            <span class="price">₹{{food.price}}</span>
+            <button class="btn-cart" (click)="addToCart(food)" [class.added]="addedToCart[food._id]">
+              {{addedToCart[food._id] ? '✅ Added' : '🛒 Add'}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <ng-template #empty>
+      <div class="empty-state">🍽️ No food items found</div>
+    </ng-template>
+  </div>

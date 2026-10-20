@@ -1,0 +1,22 @@
+.page-container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+.page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 15px; }
+.page-header h1 { font-size: 1.8rem; color: #2d3748; }
+.search-box { position: relative; }
+.search-box input { padding: 10px 40px 10px 15px; border: 2px solid #e2e8f0; border-radius: 25px; width: 280px; font-size: 0.95rem; }
+.search-box input:focus { outline: none; border-color: #ff6b35; }
+.search-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); }
+.restaurants-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+.res-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 3px 15px rgba(0,0,0,0.08); transition: transform 0.2s; }
+.res-card:hover { transform: translateY(-5px); }
+.res-img { position: relative; height: 200px; overflow: hidden; }
+.res-img img { width: 100%; height: 100%; object-fit: cover; }
+.status-badge { position: absolute; top: 10px; right: 10px; background: white; padding: 4px 10px; border-radius: 10px; font-size: 0.78rem; font-weight: 600; }
+.res-info { padding: 18px; }
+.res-info h3 { font-size: 1.15rem; color: #2d3748; margin-bottom: 6px; }
+.cuisine, .address { color: #888; font-size: 0.85rem; margin: 3px 0; }
+.desc { color: #666; font-size: 0.85rem; margin: 8px 0; }
+.res-meta { display: flex; gap: 12px; margin: 12px 0; flex-wrap: wrap; }
+.res-meta span { font-size: 0.82rem; color: #555; background: #f7fafc; padding: 3px 8px; border-radius: 8px; }
+.btn-order { display: inline-block; background: #ff6b35; color: white; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 0.88rem; font-weight: 600; margin-top: 5px; transition: background 0.2s; }
+.btn-order:hover { background: #e55a2b; }
+.empty-state { text-align: center; padding: 60px; color: #888; font-size: 1.2rem; }

@@ -1,0 +1,106 @@
+<div class="admin-page">
+    <div class="page-top">
+      <h2>🏪 Manage Restaurants</h2>
+      <button class="btn-add" (click)="openForm()">+ Add Restaurant</button>
+    </div>
+  
+    <!-- Form Modal -->
+    <div class="modal-overlay" *ngIf="showForm" (click)="closeForm()">
+      <div class="modal" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+          <h3>{{editMode ? 'Edit' : 'Add'}} Restaurant</h3>
+          <button (click)="closeForm()">✕</button>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Name *</label>
+            <input [(ngModel)]="form.name" placeholder="Restaurant Name">
+          </div>
+          <div class="form-group">
+            <label>Cuisine</label>
+            <input [(ngModel)]="form.cuisine" placeholder="Indian, Chinese, etc.">
+          </div>
+          <div class="form-group full">
+            <label>Address *</label>
+            <input [(ngModel)]="form.address" placeholder="Full Address">
+          </div>
+          <div class="form-group full">
+            <label>Description</label>
+            <input [(ngModel)]="form.description" placeholder="Brief description">
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input [(ngModel)]="form.phone" placeholder="Phone Number">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input [(ngModel)]="form.email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label>Delivery Time</label>
+            <input [(ngModel)]="form.deliveryTime" placeholder="30-45 min">
+          </div>
+          <div class="form-group">
+            <label>Delivery Fee (₹)</label>
+            <input type="number" [(ngModel)]="form.deliveryFee">
+          </div>
+          <div class="form-group">
+            <label>Min Order (₹)</label>
+            <input type="number" [(ngModel)]="form.minOrder">
+          </div>
+          <div class="form-group">
+            <label>Rating (0-5)</label>
+            <input type="number" [(ngModel)]="form.rating" min="0" max="5" step="0.1">
+          </div>
+          <div class="form-group">
+            <label>Status</label>
+            <select [(ngModel)]="form.isActive">
+              <option [ngValue]="true">Active</option>
+              <option [ngValue]="false">Inactive</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Open/Closed</label>
+            <select [(ngModel)]="form.isOpen">
+              <option [ngValue]="true">Open</option>
+              <option [ngValue]="false">Closed</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Restaurant Image</label>
+            <input type="file" (change)="onFileChange($event)" accept="image/*">
+          </div>
+        </div>
+        <button class="btn-submit" (click)="submit()">{{editMode ? 'Update' : 'Add'}} Restaurant</button>
+      </div>
+    </div>
+  
+    <!-- Table -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Image</th><th>Name</th><th>Cuisine</th><th>Address</th>
+            <th>Rating</th><th>Status</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of restaurants">
+            <td><img [src]="getImageUrl(r.image)" class="table-img" onerror="this.src='https://via.placeholder.com/60x60'"></td>
+            <td><strong>{{r.name}}</strong></td>
+            <td>{{r.cuisine}}</td>
+            <td>{{r.address | slice:0:40}}...</td>
+            <td>⭐ {{r.rating}}</td>
+            <td>
+              <span class="badge" [class.active]="r.isActive">{{r.isActive ? 'Active' : 'Inactive'}}</span>
+              <span class="badge ml" [class.active]="r.isOpen">{{r.isOpen ? 'Open' : 'Closed'}}</span>
+            </td>
+            <td>
+              <button class="btn-edit" (click)="openForm(r)">✏️ Edit</button>
+              <button class="btn-delete" (click)="delete(r._id)">🗑️ Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

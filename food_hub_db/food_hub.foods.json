@@ -1,0 +1,336 @@
+[{
+  "_id": {
+    "$oid": "69bea1994231569b82bdf745"
+  },
+  "name": "Pizza",
+  "description": "",
+  "price": 250,
+  "image": "uploads/foods/1774100889826.png",
+  "category": "Fast Food",
+  "restaurant": {
+    "$oid": "69bea1094231569b82bdf73c"
+  },
+  "isAvailable": true,
+  "isVeg": true,
+  "rating": 0,
+  "preparationTime": "15-20 min",
+  "createdAt": {
+    "$date": "2026-03-21T13:48:09.867Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-21T13:48:09.867Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c41d011bce707620708851"
+  },
+  "name": "Veg Cheese Garlic Bread",
+  "description": "Toasted bread topped with butter, garlic & cheese.",
+  "price": 120,
+  "image": "uploads/foods/1774545597986.jpg",
+  "category": "Starters",
+  "restaurant": {
+    "$oid": "69bea1094231569b82bdf73c"
+  },
+  "isAvailable": true,
+  "isVeg": true,
+  "rating": 0,
+  "preparationTime": "10–15 min",
+  "createdAt": {
+    "$date": "2026-03-25T17:36:01.451Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:19:57.990Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c41f581bce707620708857"
+  },
+  "name": "Paneer Tikka",
+  "description": "Marinated paneer grilled with spices.",
+  "price": 180,
+  "image": "uploads/foods/1774545617063.jpg",
+  "category": "Starters",
+  "restaurant": {
+    "$oid": "69c418111bce7076207087fb"
+  },
+  "isAvailable": true,
+  "isVeg": true,
+  "rating": 0,
+  "preparationTime": "15-20 min",
+  "createdAt": {
+    "$date": "2026-03-25T17:46:00.996Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:20:17.065Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c41f881bce70762070885d"
+  },
+  "name": "Crispy Corn",
+  "description": "Fried crispy corn tossed with herbs.",
+  "price": 130,
+  "image": "uploads/foods/1774545627630.jpg",
+  "category": "Starters",
+  "restaurant": {
+    "$oid": "69c418591bce707620708800"
+  },
+  "isAvailable": true,
+  "isVeg": true,
+  "rating": 0,
+  "preparationTime": "10-15 min",
+  "createdAt": {
+    "$date": "2026-03-25T17:46:48.124Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:20:27.642Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c41fb61bce707620708863"
+  },
+  "name": "Veg Manchurian Dry",
+  "description": "Indo-Chinese veg balls tossed in sauce.",
+  "price": 150,
+  "image": "uploads/foods/1774545641241.jpg",
+  "category": "Starters",
+  "restaurant": {
+    "$oid": "69c4189f1bce707620708805"
+  },
+  "isAvailable": true,
+  "isVeg": true,
+  "rating": 0,
+  "preparationTime": "15-20 min",
+  "createdAt": {
+    "$date": "2026-03-25T17:47:34.254Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:20:41.243Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c41fea1bce707620708869"
+  },
+  "name": "Hara Bhara Kebab",
+  "description": "Spinach & vegetable kebabs.",
+  "price": 140,
+  "image": "uploads/foods/1774545661613.jpg",
+  "category": "Starters",
+  "restaurant": {
+    "$oid": "69c4193d1bce70762070880a"
+  },
+  "isAvailable": true,
+  "isVeg": true,
+  "rating": 0,
+  "preparationTime": "10-15 min",
+  "createdAt": {
+    "$date": "2026-03-25T17:48:26.357Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:21:01.615Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c420451bce70762070886f"
+  },
+  "name": "French Fries",
+  "description": "Classic salted fries.",
+  "price": 90,
+  "image": "uploads/foods/1774545677957.jpg",
+  "category": "Starters",
+  "restaurant": {
+    "$oid": "69c4193d1bce70762070880a"
+  },
+  "isAvailable": true,
+  "isVeg": true,
+  "rating": 0,
+  "preparationTime": "10 min",
+  "createdAt": {
+    "$date": "2026-03-25T17:49:57.692Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:21:17.960Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c420761bce707620708875"
+  },
+  "name": "Peri Peri Fries",
+  "description": "Spicy peri peri coated fries.",
+  "price": 110,
+  "image": "uploads/foods/1774545688740.jpg",
+  "category": "Starters",
+  "restaurant": {
+    "$oid": "69c41a2d1bce70762070880f"
+  },
+  "isAvailable": true,
+  "isVeg": true,
+  "rating": 0,
+  "preparationTime": "10 min",
+  "createdAt": {
+    "$date": "2026-03-25T17:50:46.599Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:21:28.748Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c4209f1bce70762070887b"
+  },
+  "name": "Chilli Paneer Dry",
+  "description": "Crispy paneer tossed in chilli sauce.",
+  "price": 170,
+  "image": "uploads/foods/1774545706717.jpg",
+  "category": "Starters",
+  "restaurant": {
+    "$oid": "69c41ad31bce707620708814"
+  },
+  "isAvailable": true,
+  "isVeg": true,
+  "rating": 0,
+  "preparationTime": "15-20 min",
+  "createdAt": {
+    "$date": "2026-03-25T17:51:27.687Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:21:46.719Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c420d11bce707620708881"
+  },
+  "name": "Cheese Nachos",
+  "description": "Nachos topped with cheese & salsa.",
+  "price": 150,
+  "image": "uploads/foods/1774545717762.jpg",
+  "category": "Starters",
+  "restaurant": {
+    "$oid": "69c41bc71bce70762070881e"
+  },
+  "isAvailable": true,
+  "isVeg": true,
+  "rating": 0,
+  "preparationTime": "15-20 min",
+  "createdAt": {
+    "$date": "2026-03-25T17:52:17.400Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:21:57.766Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c421161bce707620708887"
+  },
+  "name": "Paneer Butter Masala",
+  "description": "Rich creamy paneer gravy.",
+  "price": 220,
+  "image": "uploads/foods/1774545734217.jpg",
+  "category": "Main Course",
+  "restaurant": {
+    "$oid": "69bea1094231569b82bdf73c"
+  },
+  "isAvailable": true,
+  "isVeg": true,
+  "rating": 0,
+  "preparationTime": "20–25 min",
+  "createdAt": {
+    "$date": "2026-03-25T17:53:26.185Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:22:14.219Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c421471bce70762070888d"
+  },
+  "name": "Veg Handi",
+  "description": "Mixed vegetables in spicy gravy.",
+  "price": 200,
+  "image": "uploads/foods/1774545747422.jpg",
+  "category": "Main Course",
+  "restaurant": {
+    "$oid": "69c418111bce7076207087fb"
+  },
+  "isAvailable": true,
+  "isVeg": true,
+  "rating": 0,
+  "preparationTime": "20–25 min",
+  "createdAt": {
+    "$date": "2026-03-25T17:54:15.665Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:22:27.425Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c421901bce707620708893"
+  },
+  "name": "Veg Kofta Curry",
+  "description": "Fried veg balls in rich curry.",
+  "price": 210,
+  "image": "uploads/foods/1774545757524.jpg",
+  "category": "Main Course",
+  "restaurant": {
+    "$oid": "69c418591bce707620708800"
+  },
+  "isAvailable": true,
+  "isVeg": true,
+  "rating": 0,
+  "preparationTime": "20-30 min",
+  "createdAt": {
+    "$date": "2026-03-25T17:55:28.640Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:22:37.528Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c56cef2cb259f491e07269"
+  },
+  "name": "Brownie with Chocolate Syrup",
+  "description": "Brownie with Chocolate Syrup ",
+  "price": 120,
+  "image": "uploads/foods/1774546159361.jpg",
+  "category": "Desserts",
+  "restaurant": {
+    "$oid": "69c56c752cb259f491e0725f"
+  },
+  "isAvailable": true,
+  "isVeg": true,
+  "rating": 0,
+  "preparationTime": "15-20 min",
+  "createdAt": {
+    "$date": "2026-03-26T17:29:19.367Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:29:19.367Z"
+  },
+  "__v": 0
+}]

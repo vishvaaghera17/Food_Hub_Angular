@@ -1,0 +1,116 @@
+<!-- Hero Banner -->
+<section class="hero-banner">
+    <div class="hero-content">
+      <h1>🍔 Delicious Food, <br><span>Delivered Fast!</span></h1>
+      <p>Order from your favourite restaurants and get it delivered at your doorstep</p>
+      <div class="hero-buttons" *ngIf="!isLoggedIn">
+        <a routerLink="/login" class="btn-hero-primary">Login</a>
+        <a routerLink="/register" class="btn-hero-outline">Register</a>
+      </div>
+      <div class="hero-buttons" *ngIf="isLoggedIn">
+        <a routerLink="/restaurants" class="btn-hero-primary">Order Now</a>
+        <a routerLink="/foods" class="btn-hero-outline">Browse Menu</a>
+      </div>
+    </div>
+    <div class="hero-image"></div>
+  </section>
+  
+  <!-- Restaurant Carousel -->
+  <section class="section carousel-section">
+    <div class="section-header">
+      <h2>🏪 Popular Restaurants</h2>
+      <a routerLink="/restaurants" class="see-all">See All →</a>
+    </div>
+  
+    <div class="carousel" *ngIf="restaurants.length > 0; else noRestaurants">
+      <button class="carousel-btn prev" (click)="prevSlide()">❮</button>
+      <div class="carousel-track">
+        <div class="carousel-slide" *ngFor="let r of restaurants; let i = index"
+             [class.active]="i === currentSlide">
+          <div class="restaurant-card">
+            <div class="restaurant-img">
+              <img [src]="getImageUrl(r.image)" [alt]="r.name" onerror="this.src='https://via.placeholder.com/400x220?text=Restaurant'">
+              <span class="badge-open" [class.closed]="!r.isOpen">{{r.isOpen ? 'Open' : 'Closed'}}</span>
+            </div>
+            <div class="restaurant-info">
+              <h3>{{r.name}}</h3>
+              <p class="cuisine">🍽️ {{r.cuisine}}</p>
+              <p class="address">📍 {{r.address}}</p>
+              <div class="restaurant-meta">
+                <span>⭐ {{r.rating || 4.5}}</span>
+                <span>🕒 {{r.deliveryTime}}</span>
+                <span>🚚 ₹{{r.deliveryFee}} delivery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn next" (click)="nextSlide()">❯</button>
+      <div class="carousel-dots">
+        <span *ngFor="let r of restaurants; let i = index"
+              class="dot" [class.active]="i === currentSlide"
+              (click)="goToSlide(i)"></span>
+      </div>
+    </div>
+    <ng-template #noRestaurants>
+      <p class="no-data">No restaurants available. Admin needs to add restaurants.</p>
+    </ng-template>
+  </section>
+  
+  <!-- Food Items Section -->
+  <section class="section food-section">
+    <div class="section-header">
+      <h2>🍱 Popular Food Items</h2>
+      <a routerLink="/foods" class="see-all">See All →</a>
+    </div>
+  
+    <div class="food-grid" *ngIf="foods.length > 0; else noFoods">
+      <div class="food-card" *ngFor="let food of foods">
+        <div class="food-img">
+          <img [src]="getImageUrl(food.image)" [alt]="food.name"
+               onerror="this.src='https://via.placeholder.com/300x180?text=Food'">
+          <span class="veg-badge" [class.non-veg]="!food.isVeg">
+            {{food.isVeg ? '🟢 Veg' : '🔴 Non-Veg'}}
+          </span>
+        </div>
+        <div class="food-info">
+          <h4>{{food.name}}</h4>
+          <p class="food-desc">{{food.description | slice:0:60}}{{food.description?.length > 60 ? '...' : ''}}</p>
+          <p class="food-restaurant">🏪 {{food.restaurant?.name}}</p>
+          <div class="food-footer">
+            <span class="price">₹{{food.price}}</span>
+            <button class="btn-add" (click)="addToCart(food)" [class.added]="addedToCart[food._id]">
+              {{addedToCart[food._id] ? '✅ Added!' : '+ Add to Cart'}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noFoods>
+      <p class="no-data">No food items available yet.</p>
+    </ng-template>
+  </section>
+  
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="feature">
+      <span class="feature-icon">🚀</span>
+      <h3>Fast Delivery</h3>
+      <p>Get your food delivered in 30-45 minutes</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">🍽️</span>
+      <h3>Fresh Food</h3>
+      <p>We ensure freshly prepared meals every time</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">💳</span>
+      <h3>Easy Payment</h3>
+      <p>Multiple payment options available</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">📱</span>
+      <h3>Track Orders</h3>
+      <p>Real-time order tracking at your fingertips</p>
+    </div>
+  </section>

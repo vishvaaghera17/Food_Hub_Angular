@@ -1,0 +1,26 @@
+<div class="admin-page">
+    <h2>👥 Manage Users</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Email</th><th>Phone</th><th>Address</th><th>Joined</th><th>Status</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td><strong>{{user.name}}</strong></td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone || 'N/A'}}</td>
+            <td>{{(user.address | slice:0:30) || 'N/A'}}</td>
+            <td>{{user.createdAt | date:'shortDate'}}</td>
+            <td><span class="badge" [class.active]="user.isActive">{{user.isActive ? 'Active' : 'Blocked'}}</span></td>
+            <td>
+              <button class="btn-toggle" (click)="toggle(user._id)">
+                {{user.isActive ? '🚫 Block' : '✅ Activate'}}
+              </button>
+              <button class="btn-delete" (click)="delete(user._id)">🗑️</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

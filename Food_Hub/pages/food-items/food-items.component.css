@@ -1,0 +1,25 @@
+.page-container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+.page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-wrap: wrap; gap: 15px; }
+.page-header h1 { font-size: 1.7rem; color: #2d3748; }
+.filters { display: flex; gap: 10px; }
+.filters input, .filters select { padding: 9px 15px; border: 2px solid #e2e8f0; border-radius: 20px; font-size: 0.9rem; }
+.filters input:focus, .filters select:focus { outline: none; border-color: #ff6b35; }
+.food-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+.food-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 3px 12px rgba(0,0,0,0.08); transition: transform 0.2s; }
+.food-card:hover { transform: translateY(-4px); }
+.food-img { position: relative; height: 180px; }
+.food-img img { width: 100%; height: 100%; object-fit: cover; }
+.veg-tag { position: absolute; top: 8px; left: 8px; background: white; padding: 3px 8px; border-radius: 8px; font-size: 0.72rem; font-weight: 600; }
+.veg-tag.nonveg { background: #fff5f5; }
+.category-tag { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.6); color: white; padding: 3px 8px; border-radius: 8px; font-size: 0.72rem; }
+.food-info { padding: 14px; }
+.food-info h4 { font-size: 1rem; color: #2d3748; margin-bottom: 6px; }
+.desc { color: #888; font-size: 0.82rem; margin: 4px 0; }
+.restaurant-name { color: #ff6b35; font-size: 0.82rem; margin: 4px 0; }
+.prep-time { color: #888; font-size: 0.8rem; }
+.food-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+.price { font-size: 1.1rem; font-weight: 700; color: #2d3748; }
+.btn-cart { background: #ff6b35; color: white; border: none; padding: 7px 16px; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.2s; }
+.btn-cart:hover { background: #e55a2b; }
+.btn-cart.added { background: #48bb78; }
+.empty-state { text-align: center; padding: 60px; color: #888; font-size: 1.2rem; }

@@ -1,0 +1,42 @@
+<div class="page-container">
+    <h1>📦 My Orders</h1>
+  
+    <div *ngIf="orders.length === 0" class="empty-state">
+      <div>📦</div>
+      <h3>No orders yet!</h3>
+      <a routerLink="/foods">Order Now</a>
+    </div>
+  
+    <div class="orders-list">
+      <div class="order-card" *ngFor="let order of orders">
+        <div class="order-header">
+          <div>
+            <h4>🏪 {{order.restaurantName}}</h4>
+            <p class="order-date">{{order.createdAt | date:'medium'}}</p>
+          </div>
+          <span class="status-badge" [ngClass]="getStatusClass(order.status)">{{order.status}}</span>
+        </div>
+  
+        <div class="order-items">
+          <div class="order-item" *ngFor="let item of order.items">
+            <span>{{item.name}} × {{item.quantity}}</span>
+            <span>₹{{item.price * item.quantity}}</span>
+          </div>
+        </div>
+  
+        <div class="order-footer">
+          <div class="order-total">
+            <span>Total: <strong>₹{{order.totalAmount}}</strong></span>
+            <span class="payment-method">{{order.paymentMethod}}</span>
+          </div>
+          <div class="order-actions">
+            <a [routerLink]="['/order', order._id]" class="btn-view">View Details</a>
+            <button class="btn-cancel" (click)="cancel(order._id)"
+                    *ngIf="order.status === 'Pending' || order.status === 'Confirmed'">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,38 @@
+<div class="page-container">
+    <div class="page-header">
+      <h1>🏪 All Restaurants</h1>
+      <div class="search-box">
+        <input type="text" [(ngModel)]="searchQuery" (input)="search()" placeholder="Search restaurants or cuisine...">
+        <span class="search-icon">🔍</span>
+      </div>
+    </div>
+  
+    <div class="restaurants-grid" *ngIf="filtered.length > 0; else empty">
+      <div class="res-card" *ngFor="let r of filtered">
+        <div class="res-img">
+          <img [src]="getImageUrl(r.image)" [alt]="r.name"
+               onerror="this.src='https://via.placeholder.com/300x200?text=Restaurant'">
+          <span class="status-badge" [class.closed]="!r.isOpen">{{r.isOpen ? '🟢 Open' : '🔴 Closed'}}</span>
+        </div>
+        <div class="res-info">
+          <h3>{{r.name}}</h3>
+          <p class="cuisine">🍽️ {{r.cuisine}}</p>
+          <p class="address">📍 {{r.address}}</p>
+          <p class="desc">{{r.description | slice:0:80}}{{r.description?.length > 80 ? '...' : ''}}</p>
+          <div class="res-meta">
+            <span>⭐ {{r.rating || 4.5}}</span>
+            <span>🕒 {{r.deliveryTime}}</span>
+            <span>Min: ₹{{r.minOrder}}</span>
+          </div>
+          <a [routerLink]="['/foods']" [queryParams]="{restaurant: r._id}" class="btn-order">
+            View Menu →
+          </a>
+        </div>
+      </div>
+    </div>
+    <ng-template #empty>
+      <div class="empty-state">
+        <p>🍽️ No restaurants found</p>
+      </div>
+    </ng-template>
+  </div>

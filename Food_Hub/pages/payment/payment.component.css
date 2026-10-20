@@ -1,0 +1,66 @@
+.payment-page { min-height: 100vh; background: linear-gradient(135deg,#fff5f0,#ffe8d6); padding: 25px 20px; position: relative; }
+.loading-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.65); display: flex; align-items: center; justify-content: center; z-index: 999; }
+.loading-card { background: white; border-radius: 20px; padding: 40px 50px; text-align: center; }
+.spinner { width: 55px; height: 55px; border: 5px solid #f0f0f0; border-top: 5px solid #ff6b35; border-radius: 50%; animation: spin .8s linear infinite; margin: 0 auto 18px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading-card p { font-size: 1.1rem; font-weight: 600; color: #2d3748; margin-bottom: 5px; }
+.loading-card small { color: #aaa; }
+.success-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.7); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.success-card { background: white; border-radius: 25px; padding: 50px 40px; text-align: center; max-width: 380px; width: 90%; }
+.success-icon { font-size: 4rem; margin-bottom: 12px; }
+.success-card h2 { color: #2d3748; font-size: 1.6rem; margin-bottom: 8px; }
+.success-card p { color: #666; margin-bottom: 8px; }
+.success-amount { font-size: 2.2rem; font-weight: 800; color: #48bb78; margin: 15px 0; }
+.redirect-text { color: #888; font-size: .88rem; }
+.success-loader { height: 4px; background: #e2e8f0; border-radius: 2px; margin-top: 20px; overflow: hidden; }
+.loader-bar { height: 100%; background: #48bb78; animation: progress 3s linear forwards; }
+@keyframes progress { from { width: 0; } to { width: 100%; } }
+.payment-container { max-width: 1050px; margin: 0 auto; }
+.back-btn { background: none; border: none; color: #ff6b35; font-size: .95rem; font-weight: 600; cursor: pointer; margin-bottom: 20px; padding: 0; }
+.payment-layout { display: grid; grid-template-columns: 1fr 350px; gap: 25px; }
+.payment-form-section { background: white; border-radius: 20px; padding: 30px; box-shadow: 0 5px 25px rgba(0,0,0,.08); }
+.payment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
+.payment-header h2 { color: #2d3748; font-size: 1.35rem; }
+.secure-badge { background: #d1fae5; color: #065f46; padding: 5px 12px; border-radius: 20px; font-size: .8rem; font-weight: 700; }
+.payment-tabs { display: flex; gap: 10px; margin-bottom: 22px; border-bottom: 2px solid #f7fafc; padding-bottom: 15px; }
+.payment-tabs button { flex: 1; padding: 10px 5px; border: 2px solid #e2e8f0; border-radius: 10px; background: white; color: #888; font-size: .88rem; font-weight: 600; cursor: pointer; transition: all .2s; }
+.payment-tabs button.active { border-color: #ff6b35; background: #fff5f0; color: #ff6b35; }
+.tab-content { animation: fadeUp .3s; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.upi-apps { display: flex; gap: 12px; margin-bottom: 18px; }
+.upi-app { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 14px 10px; border: 2px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: all .2s; }
+.upi-app:hover { border-color: #ff6b35; background: #fff5f0; }
+.upi-app span { font-size: 1.8rem; }
+.upi-app small { font-size: .75rem; color: #555; font-weight: 600; }
+.divider { text-align: center; position: relative; margin: 15px 0; }
+.divider::before { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: #e2e8f0; }
+.divider span { background: white; padding: 0 12px; color: #888; font-size: .82rem; position: relative; }
+.card-preview { background: linear-gradient(135deg,#ff6b35,#f7a27a); border-radius: 15px; padding: 22px 25px; color: white; margin-bottom: 20px; }
+.card-chip { font-size: 1.5rem; margin-bottom: 12px; }
+.card-num-display { font-size: 1.1rem; letter-spacing: 3px; font-family: monospace; margin-bottom: 15px; }
+.card-bottom-row { display: flex; justify-content: space-between; }
+.clabel { font-size: .68rem; opacity: .8; text-transform: uppercase; }
+.cvalue { font-size: .88rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-weight: 600; color: #2d3748; font-size: .85rem; margin-bottom: 6px; }
+.form-group input, .form-group select { width: 100%; padding: 11px 14px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: .92rem; box-sizing: border-box; transition: border-color .2s; background: white; }
+.form-group input:focus, .form-group select:focus { outline: none; border-color: #ff6b35; }
+.form-group small { color: #888; font-size: .78rem; margin-top: 4px; display: block; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.bank-note { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 12px 15px; margin-top: 12px; }
+.bank-note p { color: #1e40af; font-size: .88rem; }
+.btn-pay { width: 100%; padding: 15px; background: linear-gradient(135deg,#ff6b35,#f7a27a); color: white; border: none; border-radius: 12px; font-size: 1.05rem; font-weight: 700; cursor: pointer; margin-top: 20px; transition: all .2s; box-shadow: 0 4px 15px rgba(255,107,53,.35); }
+.btn-pay:hover:not(:disabled) { opacity: .9; transform: translateY(-1px); }
+.btn-pay:disabled { opacity: .5; cursor: not-allowed; }
+.pay-note { text-align: center; color: #999; font-size: .75rem; margin-top: 12px; }
+.order-summary-section { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 5px 25px rgba(0,0,0,.08); height: fit-content; position: sticky; top: 20px; }
+.order-summary-section h3 { color: #2d3748; margin-bottom: 15px; font-size: 1.1rem; }
+.summary-restaurant { background: #fff5f0; color: #ff6b35; padding: 10px 14px; border-radius: 10px; font-weight: 600; font-size: .88rem; margin-bottom: 15px; }
+.summary-items { border-bottom: 1px solid #f7fafc; margin-bottom: 12px; padding-bottom: 12px; }
+.summary-item { display: flex; justify-content: space-between; padding: 5px 0; font-size: .85rem; color: #555; }
+.charge-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: .88rem; color: #555; }
+.charge-row.total { font-weight: 800; font-size: 1.05rem; color: #2d3748; border-top: 2px solid #e2e8f0; margin-top: 8px; padding-top: 10px; }
+.delivery-details { background: #f9fafb; border-radius: 10px; padding: 12px 14px; margin-top: 15px; }
+.delivery-details h4 { color: #2d3748; font-size: .88rem; margin-bottom: 8px; }
+.delivery-details p { color: #666; font-size: .82rem; margin: 4px 0; }
+@media (max-width: 768px) { .payment-layout { grid-template-columns: 1fr; } .order-summary-section { position: static; } }

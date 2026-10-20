@@ -1,0 +1,131 @@
+<div class="payment-page">
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" *ngIf="loading">
+      <div class="loading-card">
+        <div class="spinner"></div>
+        <p>Processing Payment...</p>
+        <small>Please do not close this window</small>
+      </div>
+    </div>
+  
+    <!-- Success Overlay -->
+    <div class="success-overlay" *ngIf="paymentSuccess">
+      <div class="success-card">
+        <div class="success-icon">✅</div>
+        <h2>Payment Successful!</h2>
+        <p>Your order has been placed.</p>
+        <div class="success-amount">₹{{ orderData?.totalAmount }}</div>
+        <p class="redirect-text">Redirecting in <strong>{{ countdown }}</strong> seconds...</p>
+        <div class="success-loader"><div class="loader-bar"></div></div>
+      </div>
+    </div>
+  
+    <div class="payment-container">
+      <button class="back-btn" (click)="goBack()">← Back to Cart</button>
+  
+      <div class="payment-layout">
+  
+        <!-- LEFT: Payment Form -->
+        <div class="payment-form-section">
+          <div class="payment-header">
+            <h2>💳 Secure Payment</h2>
+            <span class="secure-badge">🔒 100% Secure</span>
+          </div>
+  
+          <!-- Tabs -->
+          <div class="payment-tabs">
+            <button [class.active]="paymentTab==='upi'" (click)="setTab('upi')">📱 UPI</button>
+            <button [class.active]="paymentTab==='card'" (click)="setTab('card')">💳 Card</button>
+            <button [class.active]="paymentTab==='netbanking'" (click)="setTab('netbanking')">🏦 Net Banking</button>
+          </div>
+  
+          <!-- UPI Tab -->
+          <div class="tab-content" *ngIf="paymentTab==='upi'">
+            <div class="upi-apps">
+              <div class="upi-app"><span>💙</span><small>Paytm</small></div>
+              <div class="upi-app"><span>🟢</span><small>GPay</small></div>
+              <div class="upi-app"><span>💜</span><small>PhonePe</small></div>
+              <div class="upi-app"><span>🔵</span><small>BHIM</small></div>
+            </div>
+            <div class="divider"><span>OR Enter UPI ID</span></div>
+            <div class="form-group">
+              <label>UPI ID *</label>
+              <input type="text" [(ngModel)]="upiId" placeholder="yourname@upi">
+              <small>Example: name@okaxis, name@ybl, name@paytm</small>
+            </div>
+          </div>
+  
+          <!-- Card Tab -->
+          <div class="tab-content" *ngIf="paymentTab==='card'">
+            <div class="card-preview">
+              <div class="card-chip">💳</div>
+              <div class="card-num-display">{{ cardNumber || '**** **** **** ****' }}</div>
+              <div class="card-bottom-row">
+                <div><div class="clabel">Card Holder</div><div class="cvalue">{{ cardName || 'YOUR NAME' }}</div></div>
+                <div><div class="clabel">Expires</div><div class="cvalue">{{ cardExpiry || 'MM/YY' }}</div></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Card Number *</label>
+              <input type="text" [value]="cardNumber" (input)="formatCard($event)" placeholder="1234 5678 9012 3456" maxlength="19">
+            </div>
+            <div class="form-group">
+              <label>Card Holder Name *</label>
+              <input type="text" [(ngModel)]="cardName" placeholder="Name as on card">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Expiry *</label>
+                <input type="text" [value]="cardExpiry" (input)="formatExpiry($event)" placeholder="MM/YY" maxlength="5">
+              </div>
+              <div class="form-group">
+                <label>CVV *</label>
+                <input type="password" [(ngModel)]="cardCVV" placeholder="•••" maxlength="3">
+              </div>
+            </div>
+          </div>
+  
+          <!-- Net Banking Tab -->
+          <div class="tab-content" *ngIf="paymentTab==='netbanking'">
+            <div class="form-group">
+              <label>Select Bank *</label>
+              <select [(ngModel)]="selectedBank">
+                <option value="">-- Select Bank --</option>
+                <option *ngFor="let b of banks" [value]="b">{{ b }}</option>
+              </select>
+            </div>
+            <div class="bank-note" *ngIf="selectedBank">
+              <p>🏦 You will be redirected to <strong>{{ selectedBank }}</strong></p>
+            </div>
+          </div>
+  
+          <button class="btn-pay" (click)="processPayment()" [disabled]="!isFormValid() || loading">
+            🔒 Pay ₹{{ orderData?.totalAmount }} Securely
+          </button>
+          <p class="pay-note">🔐 Encrypted & 100% secure. We do not store card details.</p>
+        </div>
+  
+        <!-- RIGHT: Order Summary -->
+        <div class="order-summary-section">
+          <h3>📋 Order Summary</h3>
+          <div class="summary-restaurant">🏪 {{ orderData?.restaurantName }}</div>
+          <div class="summary-items">
+            <div class="summary-item" *ngFor="let item of orderData?.items">
+              <span>{{ item.name }} × {{ item.quantity }}</span>
+              <span>₹{{ item.price * item.quantity }}</span>
+            </div>
+          </div>
+          <div class="charge-row"><span>Subtotal</span><span>₹{{ getSubtotal() }}</span></div>
+          <div class="charge-row"><span>Delivery Fee</span><span>₹{{ orderData?.deliveryFee }}</span></div>
+          <div class="charge-row total"><span>Total</span><span>₹{{ orderData?.totalAmount }}</span></div>
+          <div class="delivery-details">
+            <h4>📍 Delivering To</h4>
+            <p>{{ orderData?.deliveryAddress }}</p>
+            <p>📞 {{ orderData?.phone }}</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>

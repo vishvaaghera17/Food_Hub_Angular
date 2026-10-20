@@ -1,0 +1,35 @@
+<div class="admin-page">
+    <h2>📦 Manage Orders</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr><th>Order ID</th><th>Customer</th><th>Restaurant</th><th>Items</th><th>Amount</th><th>Address</th><th>Status</th><th>Date</th></tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+            <td><strong>#{{order._id | slice:-6 | uppercase}}</strong></td>
+            <td>
+              <div>{{order.user?.name || 'N/A'}}</div>
+              <small>{{order.phone}}</small>
+            </td>
+            <td>{{order.restaurantName}}</td>
+            <td>
+              <div *ngFor="let item of order.items" class="order-item-small">
+                {{item.name}} ×{{item.quantity}}
+              </div>
+            </td>
+            <td><strong>₹{{order.totalAmount}}</strong></td>
+            <td>
+              <small>{{order.deliveryAddress | slice:0:30}}...</small>
+            </td>
+            <td>
+              <select [ngModel]="order.status" (ngModelChange)="updateStatus(order._id, $event)" class="status-select" [ngClass]="getStatusClass(order.status)">
+                <option *ngFor="let s of statuses" [value]="s">{{s}}</option>
+              </select>
+            </td>
+            <td><small>{{order.createdAt | date:'shortDate'}}</small></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,0 +1,102 @@
+<div class="page-container">
+
+    <!-- Loading State -->
+    <div class="loading" *ngIf="!order">
+      <p>⏳ Loading order details...</p>
+    </div>
+  
+    <!-- Order Details -->
+    <div *ngIf="order">
+      <div class="back-link">
+        <a routerLink="/orders">← Back to My Orders</a>
+      </div>
+  
+      <div class="order-detail-card">
+  
+        <!-- Header -->
+        <div class="order-detail-header">
+          <div>
+            <h2>📦 Order Details</h2>
+            <p class="order-id">Order ID: <strong>#{{ order._id | slice:-8 | uppercase }}</strong></p>
+            <p class="order-date">Placed on: {{ order.createdAt | date:'fullDate' }} at {{ order.createdAt | date:'shortTime' }}</p>
+          </div>
+          <span class="status-badge" [ngClass]="getStatusClass(order.status)">
+            {{ order.status }}
+          </span>
+        </div>
+  
+        <!-- Restaurant Info -->
+        <div class="detail-section">
+          <h4>🏪 Restaurant</h4>
+          <p>{{ order.restaurantName || 'N/A' }}</p>
+        </div>
+  
+        <!-- Items Ordered -->
+        <div class="detail-section">
+          <h4>🍱 Items Ordered</h4>
+          <div class="order-item" *ngFor="let item of order.items">
+            <span class="item-name">{{ item.name }}</span>
+            <span class="item-qty">× {{ item.quantity }}</span>
+            <span class="item-price">₹{{ item.price * item.quantity }}</span>
+          </div>
+  
+          <!-- Price Breakdown -->
+          <div class="charges">
+            <div class="charge-row">
+              <span>Subtotal</span>
+              <span>₹{{ order.totalAmount - order.deliveryFee }}</span>
+            </div>
+            <div class="charge-row">
+              <span>Delivery Fee</span>
+              <span>₹{{ order.deliveryFee }}</span>
+            </div>
+            <div class="charge-row total">
+              <span>Total Amount</span>
+              <span>₹{{ order.totalAmount }}</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Delivery Details -->
+        <div class="detail-section">
+          <h4>📍 Delivery Details</h4>
+          <div class="delivery-info">
+            <p><span class="label">Address:</span> {{ order.deliveryAddress }}</p>
+            <p><span class="label">Phone:</span> {{ order.phone }}</p>
+            <p><span class="label">Payment Method:</span> {{ order.paymentMethod }}</p>
+            <p><span class="label">Payment Status:</span>
+              <span class="payment-status" [class.paid]="order.paymentStatus === 'Paid'">
+                {{ order.paymentStatus }}
+              </span>
+            </p>
+            <p *ngIf="order.notes"><span class="label">Special Notes:</span> {{ order.notes }}</p>
+          </div>
+        </div>
+  
+        <!-- Order Status Timeline -->
+        <div class="detail-section" *ngIf="order.status !== 'Cancelled'">
+          <h4>🚀 Order Progress</h4>
+          <div class="timeline">
+            <div
+              class="timeline-step"
+              *ngFor="let step of ['Pending', 'Confirmed', 'Preparing', 'Out for Delivery', 'Delivered']"
+              [class.done]="isStepDone(step)"
+              [class.current]="order.status === step"
+            >
+              <div class="step-dot">
+                <span *ngIf="isStepDone(step)">✓</span>
+              </div>
+              <span class="step-label">{{ step }}</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Cancelled State -->
+        <div class="detail-section cancelled-section" *ngIf="order.status === 'Cancelled'">
+          <h4>❌ Order Cancelled</h4>
+          <p>This order has been cancelled. If you have any questions, please contact support.</p>
+        </div>
+  
+      </div>
+    </div>
+  </div>

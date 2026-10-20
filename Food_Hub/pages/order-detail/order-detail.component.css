@@ -1,0 +1,245 @@
+.page-container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+  
+  /* Loading */
+  .loading {
+    text-align: center;
+    padding: 60px;
+    color: #888;
+    font-size: 1.1rem;
+  }
+  
+  /* Back Link */
+  .back-link {
+    margin-bottom: 20px;
+  }
+  .back-link a {
+    color: #ff6b35;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: opacity 0.2s;
+  }
+  .back-link a:hover {
+    opacity: 0.75;
+  }
+  
+  /* Main Card */
+  .order-detail-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Header */
+  .order-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f7fafc;
+  }
+  .order-detail-header h2 {
+    color: #2d3748;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+  .order-id {
+    color: #555;
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+  }
+  .order-date {
+    color: #888;
+    font-size: 0.82rem;
+  }
+  
+  /* Status Badges */
+  .status-badge {
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .status-pending   { background: #fef3c7; color: #92400e; }
+  .status-confirmed { background: #dbeafe; color: #1e40af; }
+  .status-preparing { background: #ede9fe; color: #5b21b6; }
+  .status-delivery  { background: #ffedd5; color: #9a3412; }
+  .status-delivered { background: #d1fae5; color: #065f46; }
+  .status-cancelled { background: #fee2e2; color: #991b1b; }
+  
+  /* Sections */
+  .detail-section {
+    margin-bottom: 20px;
+    padding: 18px;
+    background: #f9fafb;
+    border-radius: 12px;
+  }
+  .detail-section h4 {
+    color: #2d3748;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .detail-section > p {
+    color: #555;
+    font-size: 0.9rem;
+    margin: 5px 0;
+  }
+  
+  /* Order Items */
+  .order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #555;
+    gap: 10px;
+  }
+  .item-name { flex: 1; font-weight: 500; color: #2d3748; }
+  .item-qty  { color: #888; min-width: 40px; text-align: center; }
+  .item-price { font-weight: 600; color: #2d3748; min-width: 70px; text-align: right; }
+  
+  /* Price Charges */
+  .charges {
+    margin-top: 12px;
+    padding-top: 10px;
+  }
+  .charge-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  .charge-row.total {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #2d3748;
+    border-top: 2px solid #e2e8f0;
+    margin-top: 6px;
+    padding-top: 10px;
+  }
+  
+  /* Delivery Info */
+  .delivery-info p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 6px 0;
+    line-height: 1.5;
+  }
+  .label {
+    font-weight: 700;
+    color: #2d3748;
+    margin-right: 6px;
+  }
+  .payment-status {
+    color: #e53e3e;
+    font-weight: 600;
+  }
+  .payment-status.paid {
+    color: #48bb78;
+  }
+  
+  /* Timeline */
+  .timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 15px;
+    position: relative;
+    padding: 0 10px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 30px;
+    right: 30px;
+    height: 3px;
+    background: #e2e8f0;
+    z-index: 0;
+  }
+  .timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+  }
+  .step-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    margin-bottom: 8px;
+    border: 3px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+  }
+  .timeline-step.done .step-dot {
+    background: #48bb78;
+  }
+  .timeline-step.current .step-dot {
+    background: #ff6b35;
+    transform: scale(1.15);
+  }
+  .step-label {
+    font-size: 0.68rem;
+    color: #aaa;
+    text-align: center;
+    max-width: 70px;
+    line-height: 1.3;
+  }
+  .timeline-step.done .step-label {
+    color: #2d3748;
+    font-weight: 600;
+  }
+  .timeline-step.current .step-label {
+    color: #ff6b35;
+    font-weight: 700;
+  }
+  
+  /* Cancelled Section */
+  .cancelled-section {
+    background: #fff5f5;
+    border: 1px solid #fed7d7;
+  }
+  .cancelled-section h4 {
+    color: #c53030;
+  }
+  .cancelled-section p {
+    color: #744210;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .order-detail-header {
+      flex-direction: column;
+      gap: 15px;
+    }
+    .timeline::before {
+      left: 15px;
+      right: 15px;
+    }
+    .step-label {
+      font-size: 0.6rem;
+      max-width: 55px;
+    }
+  }

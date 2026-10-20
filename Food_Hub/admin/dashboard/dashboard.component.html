@@ -1,0 +1,74 @@
+<div class="dashboard">
+    <h2>📊 Dashboard</h2>
+  
+    <div class="stats-grid">
+      <div class="stat-card orange">
+        <div class="stat-icon">🏪</div>
+        <div class="stat-info">
+          <h3>{{stats.restaurants}}</h3>
+          <p>Restaurants</p>
+        </div>
+      </div>
+      <div class="stat-card blue">
+        <div class="stat-icon">🍱</div>
+        <div class="stat-info">
+          <h3>{{stats.foods}}</h3>
+          <p>Food Items</p>
+        </div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-icon">📦</div>
+        <div class="stat-info">
+          <h3>{{stats.orders}}</h3>
+          <p>Total Orders</p>
+        </div>
+      </div>
+      <div class="stat-card purple">
+        <div class="stat-icon">👥</div>
+        <div class="stat-info">
+          <h3>{{stats.users}}</h3>
+          <p>Users</p>
+        </div>
+      </div>
+      <div class="stat-card teal">
+        <div class="stat-icon">💰</div>
+        <div class="stat-info">
+          <h3>₹{{stats.revenue}}</h3>
+          <p>Total Revenue</p>
+        </div>
+      </div>
+      <div class="stat-card red">
+        <div class="stat-icon">⏳</div>
+        <div class="stat-info">
+          <h3>{{stats.pending}}</h3>
+          <p>Pending Orders</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="recent-orders">
+      <h3>🕒 Recent Orders</h3>
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Restaurant</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of recentOrders">
+            <td>#{{order._id | slice:-6 | uppercase}}</td>
+            <td>{{order.user?.name || 'N/A'}}</td>
+            <td>{{order.restaurantName}}</td>
+            <td>₹{{order.totalAmount}}</td>
+            <td><span class="status-badge" [ngClass]="getStatusClass(order.status)">{{order.status}}</span></td>
+            <td>{{order.createdAt | date:'shortDate'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

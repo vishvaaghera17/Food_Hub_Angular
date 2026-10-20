@@ -1,0 +1,225 @@
+[{
+  "_id": {
+    "$oid": "69bea1094231569b82bdf73c"
+  },
+  "name": "Pizza Zon",
+  "description": "Delicious food",
+  "image": "uploads/restaurants/1774100745017.png",
+  "cuisine": "Italian",
+  "address": "NVS",
+  "phone": "789651234",
+  "email": "p@gmail.com",
+  "rating": 1.4,
+  "deliveryTime": "30-45 min",
+  "minOrder": 50,
+  "deliveryFee": 30,
+  "isActive": true,
+  "isOpen": true,
+  "createdAt": {
+    "$date": "2026-03-21T13:45:45.079Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-21T13:45:45.079Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c418111bce7076207087fb"
+  },
+  "name": "Cafe Klatsch",
+  "description": "Popular café known for ambience and light meals.",
+  "image": "uploads/restaurants/1774545016707.jpg",
+  "cuisine": "Café, Continental, Fast Food",
+  "address": "Lunsikui Road, Navsari",
+  "phone": "9876543201",
+  "email": "cafeklatsch@gmail.com",
+  "rating": 4.4,
+  "deliveryTime": "20–35 min",
+  "minOrder": 100,
+  "deliveryFee": 20,
+  "isActive": true,
+  "isOpen": true,
+  "createdAt": {
+    "$date": "2026-03-25T17:14:57.085Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:10:16.730Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c418591bce707620708800"
+  },
+  "name": "Brewspresso Resto Lounge",
+  "description": "Famous café with great coffee and casual dining.",
+  "image": "uploads/restaurants/1774545032577.jpg",
+  "cuisine": "Café, Coffee, Continental",
+  "address": "Chhapra Road, Navsari",
+  "phone": "9876543202",
+  "email": "brewspresso@gmail.com",
+  "rating": 4.5,
+  "deliveryTime": "25–40 min",
+  "minOrder": 120,
+  "deliveryFee": 30,
+  "isActive": true,
+  "isOpen": true,
+  "createdAt": {
+    "$date": "2026-03-25T17:16:09.282Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:10:32.581Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c4189f1bce707620708805"
+  },
+  "name": "Bread and Butter",
+  "description": "Cozy café known for desserts, pastries & coffee.",
+  "image": "uploads/restaurants/1774545045102.jpg",
+  "cuisine": "Desserts, Café, Fast Food",
+  "address": "Dudhiya Talav Area, Navsari",
+  "phone": "9876543203",
+  "email": "breadbutter@gmail.com",
+  "rating": 4.3,
+  "deliveryTime": "20–30 min",
+  "minOrder": 150,
+  "deliveryFee": 20,
+  "isActive": true,
+  "isOpen": true,
+  "createdAt": {
+    "$date": "2026-03-25T17:17:19.764Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:10:45.107Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c4193d1bce70762070880a"
+  },
+  "name": "Nascafe",
+  "description": "Casual Nescafé branch serving beverages & snacks.",
+  "image": "uploads/restaurants/1774545292210.jpg",
+  "cuisine": "Coffee, Café, Snacks",
+  "address": "Tower Road, Navsari",
+  "phone": "9876543204",
+  "email": "nescafenavsari@gmail.com",
+  "rating": 4.2,
+  "deliveryTime": "15–25 min",
+  "minOrder": 80,
+  "deliveryFee": 20,
+  "isActive": true,
+  "isOpen": true,
+  "createdAt": {
+    "$date": "2026-03-25T17:19:57.244Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:14:52.223Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c41a2d1bce70762070880f"
+  },
+  "name": "Chai Shotts Cafe",
+  "description": "Popular tea point with a modern café setup.",
+  "image": "uploads/restaurants/1774545310560.jpg",
+  "cuisine": "Tea, Coffee, Snacks",
+  "address": "Lunsikui Char Rasta, Navsari",
+  "phone": "9876543205",
+  "email": "chaishotts@gmail.com",
+  "rating": 4.3,
+  "deliveryTime": "15–30 min",
+  "minOrder": 70,
+  "deliveryFee": 15,
+  "isActive": true,
+  "isOpen": true,
+  "createdAt": {
+    "$date": "2026-03-25T17:23:57.237Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:15:10.565Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c41ad31bce707620708814"
+  },
+  "name": "Enso Cafe",
+  "description": "Stylish café with premium ambience.",
+  "image": "uploads/restaurants/1774545330850.jpg",
+  "cuisine": "Café, Italian, Continental",
+  "address": "Lunsikui, Navsari",
+  "phone": "9876543206",
+  "email": "ensocafe@gmail.com",
+  "rating": 4.6,
+  "deliveryTime": "25–40 min",
+  "minOrder": 150,
+  "deliveryFee": 25,
+  "isActive": true,
+  "isOpen": true,
+  "createdAt": {
+    "$date": "2026-03-25T17:26:43.646Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:15:30.852Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c41bc71bce70762070881e"
+  },
+  "name": "Cafeina Foodcourt",
+  "description": "Popular spot for beverages and fast food.",
+  "image": "uploads/restaurants/1774545451748.jpg",
+  "cuisine": "Café, Fast Food",
+  "address": "Kabilpore, Navsari",
+  "phone": "9876543208",
+  "email": "cafeina@gmail.com",
+  "rating": 4.3,
+  "deliveryTime": "25–35 min",
+  "minOrder": 120,
+  "deliveryFee": 20,
+  "isActive": true,
+  "isOpen": true,
+  "createdAt": {
+    "$date": "2026-03-25T17:30:47.391Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:17:31.752Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c56c752cb259f491e0725f"
+  },
+  "name": "TTF – The Tea Factory",
+  "description": "Popular tea café with a trendy menu.",
+  "image": "uploads/restaurants/1774546037489.jpg",
+  "cuisine": "Tea, Coffee, Snacks",
+  "address": "Near Grid Circle, Navsari",
+  "phone": "9876543211",
+  "email": "ttfnavsari@gmail.com",
+  "rating": 4.2,
+  "deliveryTime": "15–25 min",
+  "minOrder": 60,
+  "deliveryFee": 15,
+  "isActive": true,
+  "isOpen": true,
+  "createdAt": {
+    "$date": "2026-03-26T17:27:17.500Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-26T17:27:17.500Z"
+  },
+  "__v": 0
+}]
